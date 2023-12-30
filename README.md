@@ -120,4 +120,7 @@ The script must be executed as root user.
 * Create user and set a password
 * force user to change password after the first login for security purpose.
 
-
+**Run the Script**
+```bash
+sh create-user.sh mohan hello I am a test user
+```
