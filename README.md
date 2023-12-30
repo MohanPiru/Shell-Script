@@ -68,7 +68,56 @@ The important command here is the following:
 tar -czf "$BACKUP_DST/$BACKUP_DATE/$BACKUP_FILENAME" "$BACKUP_SRC"
 ```
 **c**: create
+
 **z**: compress the files in order to reduce the size
+
 **f**: use archive file or device ARCHIVE
+
+
+## Disk-space.sh
+
+It is a shell script which will mail you or alert you when the free disk space[of your defined disk] will overcome the threshold value set by you.
+
+**Prerequisite**
+
+By default, mail command may not be installed on your system. So first set up Postfix of your system 
+#### STEPS OF SCRIPT:
+* set a threshold value.
+* Provide an email to get alert on it.
+* Make a cron job to run the script every day at a given time.
+
+
+## monitor-network.sh
+
+It is a simple shell script in Bash that you can use to monitor network connectivity by pinging multiple hosts and logging the results. It also includes a feature to send email alerts for unreachable hosts using the "mail" command. Make sure you have a working mail server configuration on your system.
+
+
+* Replace **"example.com"**, **"google.com"**, and **"localhost"** with the actual hosts you want to monitor.
+* Set the correct path for the **log file**(log_file variable).
+* Update the email settings (**recipient** and **subject** variables) with your email address and the desired subject for the email alerts.
+
+You can run this script at regular intervals using a scheduling tool like **cron**:
+```bash
+# Example: Run the script every 5 minutes
+*/5 * * * * /path/to/network_monitor.sh
+```
+This will run the script every 5 minutes and check the network connectivity for the specified hosts. If a host is unreachable, it will log the event and send an email alert.
+
+## create-user.sh
+
+It is a shell script which will create user of your linux system with command line arguments
+
+while running the script you have to just provide arguments [first <user name> then comment (it is not mandatory)] and this will create a user with a strong password.
+
+**Prerequisite**
+
+The script must be executed as root user.
+
+#### STEPS OF SCRIPT:
+
+* check the script is running as root or not.
+* check number of arguments if 0 or not.
+* Create user and set a password
+* force user to change password after the first login for security purpose.
 
 
