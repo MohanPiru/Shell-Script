@@ -21,7 +21,7 @@ then
 mkdir $LOC/archive
 fi
 
-#Find the list of files larger than 20mb
+#Find the list of files larger than 10mb
 
 for i in `find $LOC -maxdepth $DEPTH -type f -size +10M`
 do
